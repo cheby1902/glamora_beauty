@@ -169,7 +169,7 @@
       <hr class="struk-divider">
 
       <p class="struk-msg">
-        Terima kasih telah berbelanja di Glamora Beauty
+        Terima kasih telah berbelanja di Glamora Beauty!
       </p>
 
       <div class="struk-actions">

@@ -38,7 +38,7 @@
     </button>
 
     <div class="auth-hint">
-      Belum punya akun?
+      Belum Punya Akun?
       <a href="/register">Daftar di sini</a>
     </div>
   </div>

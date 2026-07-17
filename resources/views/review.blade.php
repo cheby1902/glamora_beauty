@@ -87,7 +87,7 @@
 </div>
 
       <div class="form-group">
-        <label for="review-text">ULASAN KAMU</label>
+        <label for="review-text">REVIEW KAMU</label>
        <textarea
         name="komentar"
         id="review-text"
@@ -101,7 +101,7 @@
       <div class="form-actions">
         <a href="index.html" class="btn-outline btn-sm">Batal</a>
         <button type="submit" class="btn-primary btn-sm">
-          Kirim Ulasan
+          Kirim Review
       </button>
       </div>
     </div>

@@ -227,7 +227,7 @@
     @else
 
     <div class="empty-state">
-        Produk belum tersedia.
+        Produk Belum Tersedia.
     </div>
 
     @endif

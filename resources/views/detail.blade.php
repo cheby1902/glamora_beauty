@@ -225,8 +225,8 @@
     <section class="review-section">
 
         <div class="review-header">
-            <h2>Ulasan Pembeli</h2>
-            <p>Ulasan dari pelanggan yang sudah membeli produk ini.</p>
+            <h2>Review Pembeli</h2>
+            <p>Review dari pelanggan yang sudah membeli produk ini.</p>
         </div>
 
 

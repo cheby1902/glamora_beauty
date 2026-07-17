@@ -49,7 +49,7 @@
     </button>
 
     <div class="auth-hint">
-      Sudah punya akun?
+      Sudah Punya Akun?
       <a href="/login">Login di sini</a>
     </div>
   </div>

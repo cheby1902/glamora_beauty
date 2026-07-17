@@ -55,7 +55,7 @@
 
     <div class="notif-header">
         <h1>Notifikasi</h1>
-        <p>Update terbaru mengenai pesananmu</p>
+        <p>Update terbaru mengenai pesananmu.</p>
     </div>
 
     @forelse($notifikasi as $item)

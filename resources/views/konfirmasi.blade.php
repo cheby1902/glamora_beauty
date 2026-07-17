@@ -146,7 +146,7 @@
              alt="QRIS">
 
         <p style="margin-top:10px;">
-            Silakan scan QRIS untuk melakukan pembayaran.
+            Silakan Scan QRIS untuk Melakukan Pembayaran.
         </p>
 
     </div>

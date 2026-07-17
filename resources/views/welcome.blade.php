@@ -64,7 +64,7 @@
 
         <p class="hero-desc">
             Temukan produk yang diformulasikan khusus sesuai jenis kulit,
-            warna kulit, dan kebutuhan kulitmu.
+            masalah kulit, dan warna kulitmu.
         </p>
 
         <button class="btn-primary" onclick="scrollToKategori()">

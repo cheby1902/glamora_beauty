@@ -63,7 +63,7 @@
     <div id="empty-cart" style="display:none" class="empty-cart">
       <div class="empty-cart-icon">🛒</div>
       <p class="empty-cart-title">Keranjangmu masih kosong</p>
-      <p class="empty-cart-sub">Yuk temukan produk yang cocok untuk kulitmu!</p>
+      <p class="empty-cart-sub">Yuk, temukan produk yang cocok untuk kulitmu!</p>
       <a href="welcome.blade.php" class="btn-primary">Jelajahi Katalog</a>
     </div>
 
