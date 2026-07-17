@@ -16,7 +16,7 @@
 <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <div class="nav-logo">
-      <a href="#home">
+      <a href="{{ url('/welcome') }}">
        <img src="{{ asset('img/img1.png') }}" alt="Glamora Beauty Logo" class="main-logo">
       </a>
     </div>
@@ -154,8 +154,7 @@
 
   <div class="toast" id="toast"></div>
 
-
-<script src="../js/auth.js"></script>
-<script src="../js/ui.js"></script>
+<script src="{{ asset('js/auth.js') }}"></script>
+<script src="{{ asset('js/ui.js') }}"></script>
 </body>
 </html>

@@ -74,10 +74,10 @@ async function doRegister() {
 
     if (result.success) {
 
-        alert('Registrasi berhasil! Silakan login menggunakan akun yang baru dibuat.');
-        window.location.href = '/login';
+    alert('Registrasi berhasil! Selamat datang di Glamora Beauty dan selamat berbelanja! ');
+    window.location.href = '/welcome';
 
-    } else {
+} else {
 
         document.getElementById('reg-err').innerText =
             result.message;

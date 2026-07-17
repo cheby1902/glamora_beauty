@@ -22,10 +22,13 @@
       DAFTAR AKUN BARU
     </div>
 
+    
+<form onsubmit="event.preventDefault(); doRegister();">
     <div class="form-group">
       <label>NAMA LENGKAP</label>
       <input type="text" id="reg-nama" placeholder="Nama lengkapmu">
     </div>
+
 
     <div class="form-group">
       <label>USERNAME</label>
@@ -44,9 +47,10 @@
 
     <div class="form-err" id="reg-err"></div>
 
-    <button class="btn-primary w-full mt-1" onclick="doRegister()">
-      Daftar
-    </button>
+    <button type="submit" class="btn-primary w-full mt-1">
+  Daftar
+</button>
+</form>
 
     <div class="auth-hint">
       Sudah Punya Akun?

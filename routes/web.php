@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Hash;
+
+use App\Models\User;
+use App\Models\Produk;
+use App\Models\Katalog;
+use App\Models\Keranjang;
 
 use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\ProdukController;
@@ -15,6 +21,7 @@ use App\Http\Controllers\PesananController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\StrukController;
 use App\Http\Controllers\NotifikasiController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +33,7 @@ use App\Http\Controllers\NotifikasiController;
    AUTH
 ========================= */
 
-// halaman awal → landing page
+// halaman awal → welcome page
 Route::get('/', function () {
 
     if (session('user_id')) {
@@ -45,7 +52,7 @@ Route::get('/', function () {
     $katalog = Katalog::all();
 
     return view(
-        'landing',
+        'landing',   // ← berubah
         compact(
             'jumlahProduk',
             'katalog'
@@ -83,25 +90,14 @@ Route::get('/register', function () {
     return view('register');
 });
 
-// logout
-Route::post('/logout', function () {
-
-    session()->flush();
-
-    return redirect('/');
-
-})->name('logout');
-
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
-Route::get('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])
+    ->name('logout');
 
 Route::get('/cek-session', function () {
     return session()->all();
 });
-
-use Illuminate\Support\Facades\Hash;
-use App\Models\User;
 
 Route::get('/buat-admin', function () {
 
@@ -116,19 +112,12 @@ Route::get('/buat-admin', function () {
     return 'Admin berhasil dibuat';
 });
 
-// welcome 
-use App\Models\Keranjang;
-use App\Models\Produk;
-use App\Models\Katalog;
-
 Route::get('/welcome', function () {
 
-    // CEK LOGIN
     if (!session('user_id')) {
         return redirect('/login');
     }
 
-    // CEK ROLE
     if (session('role') != 'user') {
         return redirect('/admin-dashboard');
     }
@@ -145,7 +134,7 @@ Route::get('/welcome', function () {
     $katalog = Katalog::all();
 
     return view(
-        'welcome',
+        'beranda',   // ← berubah
         compact(
             'jumlahKeranjang',
             'jumlahProduk',
@@ -220,7 +209,6 @@ Route::get('/warna_kulit', [WarnaKulitController::class, 'index']);
 ========================= */
 
 // dashboard admin
-use App\Http\Controllers\AdminController;
 
 Route::get('/admin-dashboard', [AdminController::class, 'dashboard']);
 

@@ -18,16 +18,22 @@ class UserController extends Controller
 
     public function register(Request $request)
 {
-    User::create([
-    'nama_user' => $request->nama_user,
-    'username' => $request->username,
-    'email' => $request->email,
-    'password' => Hash::make($request->password),
-    'role' => 'user'
-]);
+    $user = User::create([
+        'nama_user' => $request->nama_user,
+        'username' => $request->username,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'role' => 'user'
+    ]);
+
+    // otomatis login
+    $request->session()->put('user_id', $user->id_user);
+    $request->session()->put('username', $user->username);
+    $request->session()->put('role', $user->role);
+
     return response()->json([
         'success' => true,
-        'message' => 'Register berhasil'
+        'message' => 'Registrasi berhasil'
     ]);
 }
 
@@ -61,11 +67,11 @@ class UserController extends Controller
 ]);
 }
 
-    public function logout(Request $request)
+public function logout(Request $request)
 {
     $request->session()->flush();
 
-    return redirect('/login');
+    return redirect('/');
 }
 
 public function destroy($id)

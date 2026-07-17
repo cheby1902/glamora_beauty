@@ -15,7 +15,7 @@
 <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <div class="nav-logo">
-      <a href="#home">
+      <a href="{{ url('/welcome') }}">
        <img src="{{ asset('img/img1.png') }}" alt="Glamora Beauty Logo" class="main-logo">
       </a>
     </div>

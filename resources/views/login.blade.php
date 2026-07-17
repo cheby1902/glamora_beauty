@@ -17,6 +17,13 @@
       BEAUTY
     </div>
 
+  @if(request('pesan') == 'login')
+    <div class="login-alert">
+        Silakan login terlebih dahulu untuk melihat produk.
+    </div>
+@endif
+
+<form onsubmit="event.preventDefault(); doLogin();">
     <div class="form-group">
       <label>USERNAME</label>
       <input type="text" id="login-user" placeholder="Masukkan username">
@@ -33,9 +40,10 @@
     </div>
 
     <div class="form-err" id="login-err"></div>
-    <button class="btn-primary w-full mt-1" onclick="doLogin()">
-      Masuk
-    </button>
+    <button type="submit" class="btn-primary w-full mt-1">
+    Masuk
+</button>
+</form>
 
     <div class="auth-hint">
       Belum Punya Akun?

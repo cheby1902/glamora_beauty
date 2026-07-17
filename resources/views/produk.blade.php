@@ -16,7 +16,7 @@
 <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <div class="nav-logo">
-      <a href="#home">
+      <a href="{{ url('/welcome') }}">
        <img src="{{ asset('img/img1.png') }}" alt="Glamora Beauty Logo" class="main-logo">
       </a>
     </div>
@@ -164,6 +164,19 @@
     </div>
     @endif
 
+    @if($showJenis || $showMasalah)
+
+   @if($filterAktif)
+
+<a href="{{ url('/produk/'.$katalog->id_katalog) }}"
+   class="filter-reset">
+    Reset Semua Filter
+</a>
+
+@endif
+
+@endif
+
 </div>
 
 <!-- ===== PRODUK ===== -->
@@ -214,10 +227,6 @@
                 @endif
 
             </div>
-
-
-
-            
         </a>
 
         @endforeach
@@ -236,7 +245,7 @@
 
   <div class="toast" id="toast"></div>
 
-  <script src="../js/filter.js"></script>
+  <script src="{{ asset('js/filter.js') }}"></script>
   
 </body>
 </html>

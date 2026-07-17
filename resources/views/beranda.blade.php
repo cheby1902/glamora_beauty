@@ -12,7 +12,7 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <div class="nav-logo">
-      <a href="#home">
+      <a href="{{ url('/welcome') }}">
        <img src="{{ asset('img/img1.png') }}" alt="Glamora Beauty Logo" class="main-logo">
       </a>
     </div>
@@ -36,13 +36,14 @@
         </span>
     </a>
     </div>
-      </a>
-    </div>
 
     <div class="nav-user">
-      <button class="btn-login" onclick="window.location.href='/login'">
-        Masuk
-      </button>
+      <form action="{{ route('logout') }}" method="POST">
+    @csrf
+    <button type="submit" class="btn-login">
+        Keluar
+    </button>
+  </form>
     </div>
   </nav>
 
@@ -88,95 +89,26 @@
 
 @foreach($katalog as $kat)
 
-    @if(session('user_id'))
+<a href="{{ url('/produk/'.$kat->id_katalog) }}"
+   class="katalog-card">
 
-        <a href="{{ url('/produk/'.$kat->id_katalog) }}"
-          class="katalog-card">
+    <img src="{{ $kat->gambar_katalog }}"
+         class="katalog-icon"
+         alt="{{ $kat->nama_katalog }}">
 
-        @else
+    <div class="katalog-name">
+        {{ $kat->nama_katalog }}
+    </div>
 
-        <a href="#"
-          class="katalog-card"
-          onclick="showLoginModal(event)">
+    <div class="katalog-count">
+        {{ $jumlahProduk[$kat->id_katalog] ?? 0 }} Produk
+    </div>
 
-        @endif
-
-        <img src="{{ $kat->gambar_katalog }}"
-             class="katalog-icon"
-             alt="{{ $kat->nama_katalog }}">
-
-        <div class="katalog-name">
-            {{ $kat->nama_katalog }}
-        </div>
-
-        <div class="katalog-count">
-            {{ $jumlahProduk[$kat->id_katalog] ?? 0 }} Produk
-        </div>
-
-    </a>
+</a>
 
 @endforeach
 
 </div>
-
-
-<!-- ===== LOGIN MODAL ===== -->
-<div id="loginModal" class="modal">
-
-    <div class="modal-content">
-
-        <span class="close-modal" onclick="closeLoginModal()">&times;</span>
-
-        <h2>🛍️ Ingin Belanja?</h2>
-
-        <p>
-            Login terlebih dahulu untuk melihat produk,
-            menambahkan ke keranjang, dan melakukan checkout.
-        </p>
-
-        <a href="/login" class="modal-btn">
-            Login
-        </a>
-
-        <div class="modal-register">
-            Belum punya akun?
-            <a href="/register">Daftar di sini</a>
-        </div>
-
-    </div>
-
-</div>
-
-<script>
-
-function showLoginModal(event){
-
-    alert("Klik berhasil");
-
-    event.preventDefault();
-
-    document.getElementById("loginModal").style.display = "flex";
-
-}
-
-function closeLoginModal(){
-
-    document.getElementById("loginModal").style.display = "none";
-
-}
-
-// klik area luar modal
-window.onclick = function(event){
-
-    let modal = document.getElementById("loginModal");
-
-    if(event.target == modal){
-        modal.style.display = "none";
-    }
-
-}
-
-</script>
 
   <script>
     function scrollToKategori()  {

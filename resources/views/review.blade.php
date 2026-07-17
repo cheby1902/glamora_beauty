@@ -16,7 +16,7 @@
 <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <div class="nav-logo">
-      <a href="#home">
+      <a href="{{ url('/welcome') }}">
        <img src="{{ asset('img/img1.png') }}" alt="Glamora Beauty Logo" class="main-logo">
       </a>
     </div>
@@ -98,8 +98,9 @@
 
       <p class="form-error" id="review-error"></p>
 
-      <div class="form-actions">
-        <a href="index.html" class="btn-outline btn-sm">Batal</a>
+      <div class="form-actions"><a href="{{ url()->previous() }}" class="btn-outline btn-sm">
+          Batal
+      </a>
         <button type="submit" class="btn-primary btn-sm">
           Kirim Review
       </button>
@@ -109,11 +110,11 @@
 
   <div class="toast" id="toast"></div>
 
-  <script src="../js/storage.js"></script>
-  <script src="../js/auth.js"></script>
-  <script src="../js/data.js"></script>
-  <script src="../js/ui.js"></script>
-
+ <script src="{{ asset('js/storage.js') }}"></script>
+  <script src="{{ asset('js/auth.js') }}"></script>
+  <script src="{{ asset('js/data.js') }}"></script>
+  <script src="{{ asset('js/ui.js') }}"></script>
+  
   </script>
 </body>
 </html>
