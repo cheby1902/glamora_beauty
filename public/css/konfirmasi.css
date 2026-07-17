@@ -1,0 +1,308 @@
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ===== COLORS ===== */
+:root{
+  --rose:#c2717a;
+  --rose-light:#e8b4b8;
+  --rose-bg:#faf7f4;
+  --cream:#fefcfa;
+  --text:#2c1f22;
+  --muted:#7a6568;
+  --border:#e8dfe0;
+  --card:#ffffff;
+  --accent:#a85560;
+  --danger:#dc3545;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--rose-bg);
+  color:var(--text);
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+  background:var(--cream);
+  border-bottom:1px solid var(--border);
+  height:70px;
+  padding:0 2rem;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  height:100%;
+}
+
+.nav-logo a{
+  display:flex;
+  align-items:center;
+  height:100%;
+}
+
+.main-logo{
+  height:120px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+
+.nav-links{
+  display:flex;
+  gap:1.5rem;
+  align-items:center;
+}
+
+.nav-links a{
+  text-decoration:none;
+  font-size:13px;
+  color:var(--muted);
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+.nav-user{
+  display:flex;
+  align-items:center;
+}
+
+.cart-btn{
+  position:relative;
+  text-decoration:none;
+  font-size:20px;
+  color:var(--text);
+}
+
+.cart-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:var(--accent);
+  color:white;
+  font-size:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.notif-btn {
+    position: relative;
+}
+
+.notif-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #b35b69;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.btn-logout{
+  border:none;
+  background:var(--accent);
+  color:white;
+
+  padding:.5rem 1rem;
+  border-radius:8px;
+
+  cursor:pointer;
+}
+
+/* ===== PAGE ===== */
+
+.checkout-wrap{
+  max-width:1000px;
+  margin:0 auto;
+  padding:2rem;
+}
+
+.checkout-layout{
+  display:grid;
+  grid-template-columns:1fr;
+}
+
+/* ===== SECTION ===== */
+
+.form-section{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:1.8rem;
+  margin-bottom:1.5rem;
+}
+
+.form-section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;
+
+  margin-bottom:1.5rem;
+}
+
+/* ===== SUMMARY ===== */
+
+.summary-divider{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1rem 0;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+
+  gap:1rem;
+
+  padding:.7rem 0;
+
+  font-size:14px;
+}
+
+.summary-row span:last-child{
+  text-align:right;
+}
+
+.summary-row.total{
+  font-size:17px;
+  font-weight:600;
+}
+
+.summary-row strong{
+  font-weight:600;
+}
+
+/* ===== PAYMENT DEADLINE ===== */
+
+.payment-deadline{
+    background:#fff6f7;
+    border:1px solid #e7c9cf;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.payment-deadline .deadline-title{
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:6px;
+    font-weight:500;
+}
+
+.payment-deadline h3{
+    font-size:22px;
+    color:var(--accent);
+    font-weight:700;
+    margin:0;
+    line-height:1.3;
+}
+
+.payment-deadline .deadline-note{
+    margin-top:8px;
+    font-size:13px;
+    color:var(--muted);
+} 
+
+/* ===== QRIS ===== */
+
+.qris-box{
+  text-align:center;
+  margin-top:1rem;
+}
+
+.qris-box img{
+  width:250px;
+  max-width:100%;
+}
+
+.qris-box p{
+  margin-top:.8rem;
+  color:var(--muted);
+}
+
+/* ===== COD ===== */
+
+.cod-box{
+  margin-top:1rem;
+
+  background:#fafafa;
+  border:1px solid var(--border);
+  border-radius:12px;
+
+  padding:1rem;
+}
+
+/* ===== BUTTON ===== */
+
+.btn-primary{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:var(--accent);
+  color:white;
+
+  border:none;
+  border-radius:12px;
+
+  padding:1rem;
+
+  text-decoration:none;
+
+  font-size:15px;
+  font-weight:500;
+
+  transition:.2s;
+}
+
+.btn-primary:hover{
+  opacity:.9;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+  .navbar{
+    padding:0 1rem;
+  }
+
+  .checkout-wrap{
+    padding:1rem;
+  }
+
+  .form-section-title{
+    font-size:1.7rem;
+  }
+
+}

@@ -1,0 +1,367 @@
+/* ===== RESET ===== */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== COLORS ===== */
+:root {
+  --rose: #c2717a;
+  --rose-light: #e8b4b8;
+  --rose-bg: #faf7f4;
+  --cream: #fefcfa;
+  --text: #2c1f22;
+  --muted: #7a6568;
+  --border: #e8dfe0;
+  --card: #ffffff;
+  --accent: #a85560;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--rose-bg);
+  color: var(--text);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  height: 70px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.main-logo {
+  height: 120px !important; /* Ukuran pas agar tidak menabrak garis */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ===== Navigation Links ===== */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--muted);
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ===== Right Side ===== */
+.nav-user {
+  display: flex;
+  align-items: center;
+}
+
+/* ===== CART ===== */
+.cart-btn {
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif-btn {
+    position: relative;
+}
+
+.notif-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #b35b69;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+
+.btn-logout {
+  border: none;
+  background: var(--accent);
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-logout:hover {
+  opacity: .9;
+}
+
+/* ============================================================
+CHECKOUT LAYOUT
+============================================================ */
+
+.checkout-wrap {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ============================================================
+FORM SECTION
+============================================================ */
+
+.form-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  padding: 1.8rem;
+
+  margin-bottom: 1.8rem;
+}
+
+.form-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+
+  margin-bottom: 1.5rem;
+}
+
+/* ===== FORM ===== */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 12px;
+  color: var(--muted);
+
+  margin-bottom: .45rem;
+  letter-spacing: .5px;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  padding: .9rem 1rem;
+
+  font-size: 14px;
+  font-family: inherit;
+
+  background: white;
+  outline: none;
+
+  transition: .2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ============================================================
+SHIPPING
+============================================================ */
+
+.shipping-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shipping-option {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  padding: 1rem;
+
+  display: flex;
+  align-items: flex-start;
+  gap: .8rem;
+
+  cursor: pointer;
+  transition: .2s;
+}
+
+.shipping-option:hover {
+  border-color: var(--accent);
+}
+
+.shipping-info {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.shipping-name {
+  font-weight: 500;
+}
+
+.shipping-price {
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* ============================================================
+BUTTON
+============================================================ */
+
+.btn-primary {
+  width: 100%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: var(--accent);
+  color: white;
+
+  padding: 1rem;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: .2s;
+
+  margin-top: 1rem;
+ text-decoration: none;
+}
+
+.btn-primary:hover {
+  opacity: .9;
+}
+
+/* ============================================================
+ERROR
+============================================================ */
+
+.form-error {
+  color: var(--danger);
+  font-size: 13px;
+
+  margin-top: .8rem;
+}
+
+/* ============================================================
+TOAST
+============================================================ */
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  background: var(--text);
+  color: white;
+
+  padding: .9rem 1rem;
+  border-radius: 10px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: .3s;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* ============================================================
+RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-summary {
+    position: static;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .checkout-wrap {
+    padding: 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+}

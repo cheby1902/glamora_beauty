@@ -1,0 +1,443 @@
+/* ===== RESET ===== */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== COLORS ===== */
+:root {
+  --rose: #c2717a;
+  --rose-light: #e8b4b8;
+  --rose-bg: #faf7f4;
+  --cream: #fefcfa;
+  --text: #2c1f22;
+  --muted: #7a6568;
+  --border: #e8dfe0;
+  --card: #ffffff;
+  --accent: #a85560;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--rose-bg);
+  color: var(--text);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  height: 70px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.main-logo {
+  height: 120px !important; /* Ukuran pas agar tidak menabrak garis */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ===== Navigation Links ===== */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--muted);
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ===== Right Side ===== */
+.nav-user {
+  display: flex;
+  align-items: center;
+}
+
+/* ===== CART ===== */
+.cart-btn {
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif-btn {
+    position: relative;
+}
+
+.notif-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #b35b69;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.btn-logout {
+  border: none;
+  background: var(--accent);
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .2s;
+  margin-left: 20px;
+}
+
+.btn-logout:hover {
+  opacity: .9;
+}
+
+/* ============================================================
+   CART
+   ============================================================ */
+
+.cart-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cart-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+}
+
+.back-btn{
+    color:var(--accent);
+    text-decoration:none;
+    font-size:14px;
+    margin-bottom:20px;
+    display:inline-block;
+}
+
+.back-btn:hover{
+      text-decoration: none;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-cart-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-cart-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  margin-bottom: .4rem;
+}
+
+.empty-cart-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ============================================================
+   CART ITEM
+   ============================================================ */
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: .8rem;
+}
+
+.cart-item-img {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg,#f9eef0,#f0dde1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.8rem;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-brand {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.cart-item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  margin: .2rem 0;
+}
+
+.cart-item-price {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid var(--border);
+  background: white;
+
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-btn {
+  border: none;
+  background: transparent;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Card produk di keranjang */
+.cart-product{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cart-product-info{
+    flex:1;
+}
+
+.cart-product-action{
+    margin-left:25px;
+}
+
+/* ============================================================
+   SUMMARY
+   ============================================================ */
+
+.summary-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+
+  position: sticky;
+  top: 20px;
+}
+
+.summary-title {
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 1rem;
+}
+
+.summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.summary-divider {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: var(--accent);
+  color: white;
+
+  padding: .9rem 1.2rem;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: .2s;
+    text-decoration: none; 
+}
+
+.btn-primary:hover {
+  opacity: .9;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  background: var(--text);
+  color: white;
+
+  padding: .8rem 1rem;
+  border-radius: 10px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: .3s;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* ============================================================
+   DELETE BUTTON
+   ============================================================ */
+
+.btn-delete{
+    margin-top:15px;
+    padding:10px 22px;
+
+    background:#fff;
+    color:#d9534f;
+
+    border:1px solid #f1b7b5;
+    border-radius:10px;
+
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+
+.btn-delete:hover{
+    background:#d9534f;
+    color:#fff;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    gap: .8rem;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .cart-wrap {
+    padding: 1rem;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+}
