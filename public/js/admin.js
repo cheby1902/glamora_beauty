@@ -25,7 +25,7 @@ function doLogout() {
     window.location.href = "/";
 }
 
-/* ===== MODAL KATEGORI ===== */
+/* ===== Modal Kategori ===== */
 
 function openTambahKategoriModal() {
     const modal = document.getElementById('modal-kategori');

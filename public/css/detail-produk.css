@@ -169,7 +169,7 @@ body {
 .detail-img {
   width: 100%;
   aspect-ratio: 1;
-  background: #ffffff;        /* putih */
+  background: #ffffff;        
   border: 1px solid #ececec;  /* border tipis biar tidak polos */
   border-radius: 18px;
   display: flex;

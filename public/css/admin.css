@@ -54,7 +54,7 @@ body {
 }
 
 .main-logo {
-  height: 100px !important;
+  height: 100px !important; /* Ukuran pas agar tidak menabrak garis */
   width: auto;
   display: block;
   object-fit: contain;

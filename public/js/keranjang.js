@@ -1,6 +1,6 @@
 const Cart = (() => {
 
-  // ---- Tambah produk ke keranjang ----
+  // ---- Tambah produk ke keranjang ---- //
   function add(produk, qty = 1) {
     const cart    = Storage.getCart();
     const idx     = cart.findIndex(item => item.id === produk.id);
