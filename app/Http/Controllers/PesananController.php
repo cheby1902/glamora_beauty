@@ -44,6 +44,26 @@ if (!session()->has('user_id')) {
 
     }
 
+// TAMBAHKAN DI SINI
+    $request->validate([
+        'nama_penerima' => 'required',
+        'no_hp' => 'required',
+        'alamat' => 'required',
+        'kode_pos' => 'required',
+        'kota' => 'required',
+        'metode_pengiriman' => 'required',
+        'metode_pembayaran' => 'required',
+    ],[
+        'nama_penerima.required' => 'Nama penerima wajib diisi.',
+        'no_hp.required' => 'Nomor HP wajib diisi.',
+        'alamat.required' => 'Alamat wajib diisi.',
+        'kode_pos.required' => 'Kode pos wajib diisi.',
+        'kota.required' => 'Kota wajib diisi.',
+        'metode_pengiriman.required' => 'Pilih metode pengiriman.',
+        'metode_pembayaran.required' => 'Pilih metode pembayaran.',
+    ]);
+
+
     session([
         'checkout_from' => $request->from
     ]);

@@ -89,52 +89,59 @@
               NAMA PENERIMA
             </label>
 
-            <input type="text"
-              id="nama-penerima"
-              name="nama_penerima"
-              placeholder="Nama lengkap">
-          </div>
+            <input
+            type="text"
+            id="nama-penerima"
+            name="nama_penerima"
+            placeholder="Nama lengkap"
+            required>
 
           <div class="form-group">
             <label for="no-hp">
               NOMOR HP
             </label>
 
-            <input type="tel"
-              id="no-hp"
-              name="no_hp"
-              placeholder="08xxxxxxxxxx">
-          </div>
+            <input
+            type="tel"
+            id="no-hp"
+            name="no_hp"
+            placeholder="08xxxxxxxxxx"
+            required>
 
           <div class="form-group">
             <label for="alamat">
               ALAMAT LENGKAP
             </label>
 
-            <textarea id="alamat"
-              name="alamat"
-              rows="3"
-              placeholder="Jalan, nomor rumah, RT/RW"></textarea>
-          </div>
+            <textarea
+            id="alamat"
+            name="alamat"
+            rows="3"
+            placeholder="Jalan, nomor rumah, RT/RW"
+            required></textarea>
+            </div>
 
           <div class="form-row">
 
             <div class="form-group">
               <label for="kota">KOTA</label>
 
-              <input type="text"
-              id="kota"
-              name="kota"
-              placeholder="Kota anda">
-            </div>
+              <input
+            type="text"
+            id="kota"
+            name="kota"
+            placeholder="Kota anda"
+            required>
 
             <div class="form-group">
               <label for="kodepos">KODE POS</label>
 
-              <input type="text"
+              <input
+              type="text"
               id="kodepos"
               name="kode_pos"
-              placeholder="12345">
+              placeholder="12345"
+              required>
             </div>
 
           </div>
@@ -151,10 +158,12 @@
   <div class="shipping-options" id="shipping-options">
 
   <label class="shipping-option">
-  <input type="radio"
-         name="metode_pengiriman"
-         value="reguler"
-         checked>
+  <input
+    type="radio"
+    name="metode_pengiriman"
+    value="reguler"
+    checked
+    required>
 
   <div class="shipping-info">
     <span class="shipping-name">
@@ -214,10 +223,12 @@
 
     <label class="shipping-option">
 
-      <input type="radio"
-            name="metode_pembayaran"
-            value="qris"
-            checked>
+      <input
+    type="radio"
+    name="metode_pembayaran"
+    value="qris"
+    checked
+    required>
 
       <div class="shipping-info">
         <span class="shipping-name">
