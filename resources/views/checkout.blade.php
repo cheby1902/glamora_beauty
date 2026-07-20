@@ -54,7 +54,17 @@
   <!-- ===== CHECKOUT ===== -->
   <div class="checkout-wrap">
     <form action="/checkout" method="POST">
-    @csrf
+@csrf
+
+@if ($errors->any())
+<div style="color:red; margin-bottom:15px;">
+    <ul style="padding-left:20px;">
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
     <input type="hidden"
        name="id_produk"
@@ -95,6 +105,7 @@
             name="nama_penerima"
             placeholder="Nama lengkap"
             required>
+            </div>
 
           <div class="form-group">
             <label for="no-hp">
@@ -107,6 +118,7 @@
             name="no_hp"
             placeholder="08xxxxxxxxxx"
             required>
+            </div>
 
           <div class="form-group">
             <label for="alamat">
@@ -132,6 +144,7 @@
             name="kota"
             placeholder="Kota anda"
             required>
+            </div>
 
             <div class="form-group">
               <label for="kodepos">KODE POS</label>
