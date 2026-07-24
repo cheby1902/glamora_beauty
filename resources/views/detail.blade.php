@@ -241,44 +241,25 @@
                 </div>
             </div>
 
-        @elseif(($canReview ?? false) && !($alreadyReviewed ?? false))
+       @elseif(($canReview ?? false) && !($alreadyReviewed ?? false))
 
-            <div class="review-form-card">
-                <h3>Tulis Review</h3>
-                <p>Bagikan pengalamanmu setelah membeli produk ini.</p>
+<div class="review-notice">
 
-                <form action="{{ route('review.store') }}" method="POST">
-                    @csrf
+    <div class="review-notice-icon">⭐</div>
 
-                    <input type="hidden" name="id_produk" value="{{ $produk->id_produk }}">
+    <div>
 
-                    <div class="form-group">
-                        <label>Rating</label>
+        <h3>Produk sudah bisa direview</h3>
 
-                        <select name="rating" required>
-                            <option value="">Pilih rating</option>
-                            <option value="5">5 ★ Sangat Baik</option>
-                            <option value="4">4 ★ Baik</option>
-                            <option value="3">3 ★ Cukup</option>
-                            <option value="2">2 ★ Kurang</option>
-                            <option value="1">1 ★ Buruk</option>
-                        </select>
-                    </div>
+        <p>
+            Kamu sudah membeli produk ini.
+            Silakan berikan review melalui halaman Notifikasi setelah pesanan berstatus
+            <strong>Sudah Tiba</strong>.
+        </p>
 
-                    <div class="form-group">
-                        <label>Review Kamu</label>
+    </div>
 
-                        <textarea name="komentar"
-                                  rows="4"
-                                  placeholder="Ceritakan pengalamanmu dengan produk ini..."
-                                  required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-review">
-                        Kirim Review
-                    </button>
-                </form>
-            </div>
+</div>
 
         @elseif($alreadyReviewed ?? false)
 
