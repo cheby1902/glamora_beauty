@@ -31,21 +31,43 @@
 
 
     <div class="form-group">
-      <label>USERNAME</label>
-      <input type="text" id="reg-user" placeholder="Buat username">
-    </div>
+  <label>USERNAME</label>
+
+  <input
+      type="text"
+      id="reg-user"
+      placeholder="Buat username">
+
+  <small id="user-msg" class="live-error"></small>
+
+</div>
 
     <div class="form-group">
-      <label>EMAIL</label>
-      <input type="email" id="reg-email" placeholder="Masukkan email">
-    </div>
+
+  <label>EMAIL</label>
+
+  <input
+      type="email"
+      id="reg-email"
+      placeholder="Masukkan email">
+
+  <small id="email-msg" class="live-error"></small>
+
+</div>
 
     <div class="form-group">
-      <label>PASSWORD</label>
-      <input type="password" id="reg-pass" placeholder="Buat password">
-    </div>
 
-    <div class="form-err" id="reg-err"></div>
+  <label>PASSWORD</label>
+
+  <input
+      type="password"
+      id="reg-pass"
+      placeholder="Buat password">
+
+  <small id="pass-msg" class="live-error"></small>
+
+</div>
+
 
     <button type="submit" class="btn-primary w-full mt-1">
   Daftar

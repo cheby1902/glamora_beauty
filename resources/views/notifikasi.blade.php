@@ -138,7 +138,7 @@
                         @else
                             <a href="{{ url('/review/'.$detail->id_produk) }}"
                                 class="btn-review">
-                                Beri Ulasan
+                                Beri Review
                             </a>
                         @endif
                     </div>

@@ -91,6 +91,8 @@ Route::get('/register', function () {
 });
 
 Route::post('/register', [UserController::class, 'register']);
+Route::post('/cek-username', [UserController::class, 'cekUsername']);
+Route::post('/cek-email', [UserController::class, 'cekEmail']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout'])
     ->name('logout');

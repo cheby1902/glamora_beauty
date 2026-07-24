@@ -225,8 +225,8 @@
     <section class="review-section">
 
         <div class="review-header">
-            <h2>Review Pembeli</h2>
-            <p>Review dari pelanggan yang sudah membeli produk ini.</p>
+            <h2>Review Customer</h2>
+            <p>Review dari customer yang sudah membeli produk ini.</p>
         </div>
 
 
@@ -236,15 +236,15 @@
             <div class="review-notice">
                 <div class="review-notice-icon">🔒</div>
                 <div>
-                    <h3>Login untuk memberi ulasan</h3>
-                    <p>Silakan login terlebih dahulu sebelum memberikan ulasan produk.</p>
+                    <h3>Login untuk memberi review</h3>
+                    <p>Silakan login terlebih dahulu sebelum memberikan review produk.</p>
                 </div>
             </div>
 
         @elseif(($canReview ?? false) && !($alreadyReviewed ?? false))
 
             <div class="review-form-card">
-                <h3>Tulis Ulasan</h3>
+                <h3>Tulis Review</h3>
                 <p>Bagikan pengalamanmu setelah membeli produk ini.</p>
 
                 <form action="{{ route('review.store') }}" method="POST">
@@ -266,7 +266,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Ulasan Kamu</label>
+                        <label>Review Kamu</label>
 
                         <textarea name="komentar"
                                   rows="4"
@@ -275,7 +275,7 @@
                     </div>
 
                     <button type="submit" class="btn-review">
-                        Kirim Ulasan
+                        Kirim Review
                     </button>
                 </form>
             </div>
@@ -285,8 +285,8 @@
             <div class="review-notice">
                 <div class="review-notice-icon">✅</div>
                 <div>
-                    <h3>Ulasan sudah dikirim</h3>
-                    <p>Kamu sudah memberikan ulasan untuk produk ini.</p>
+                    <h3>Review sudah dikirim</h3>
+                    <p>Kamu sudah memberikan review untuk produk ini.</p>
                 </div>
             </div>
 
@@ -295,8 +295,8 @@
             <div class="review-notice">
                 <div class="review-notice-icon">🛍️</div>
                 <div>
-                    <h3>Belum bisa memberi ulasan</h3>
-                    <p>Kamu harus membeli produk ini terlebih dahulu sebelum memberikan ulasan.</p>
+                    <h3>Belum bisa memberi review</h3>
+                    <p>Kamu harus membeli produk ini terlebih dahulu sebelum memberikan review.</p>
                 </div>
             </div>
 
@@ -339,8 +339,8 @@
             @empty
                 <div class="empty-review-card">
                     <div class="empty-review-icon">💬</div>
-                    <h3>Belum ada ulasan</h3>
-                    <p>Produk ini belum memiliki ulasan dari pembeli.</p>
+                    <h3>Belum ada review</h3>
+                    <p>Produk ini belum memiliki review dari customer.</p>
                 </div>
             @endforelse
         </div>

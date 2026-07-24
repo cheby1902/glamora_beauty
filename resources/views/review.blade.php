@@ -62,7 +62,7 @@
 
       <div class="review-form-card">
 
-      <h2 class="review-form-title">Tulis Ulasan</h2>
+      <h2 class="review-form-title">Beri Review</h2>
       <p class="review-form-sub" id="review-produk-info"></p>
 
       <div class="form-group">

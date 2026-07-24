@@ -120,3 +120,10 @@ body{
     text-align:center;
     font-size:14px;
 }
+
+.live-error{
+    display:block;
+    margin-top:5px;
+    color:#d9534f;
+    font-size:13px;
+}

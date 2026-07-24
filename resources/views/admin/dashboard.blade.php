@@ -51,7 +51,7 @@
             </div>
 
             <div class="admin-menu-item" onclick="showAdminTab('review', this)">
-                Ulasan Customer
+                Review Customer
             </div>
 
             <div class="admin-menu-item" onclick="showAdminTab('user', this)">
@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="dashboard-card">
-                        <h3>Total Ulasan</h3>
+                        <h3>Total Review</h3>
                         <p>{{ $totalUlasan ?? 0 }}</p>
                     </div>
 
@@ -382,10 +382,10 @@
 
 
 
-            <!-- ================= ULASAN USER ================= -->
+            <!-- ================= REVIEW USER ================= -->
             <section class="admin-tab-content" id="tab-review">
 
-                <h1 class="admin-title">Ulasan Customer</h1>
+                <h1 class="admin-title">Review Customer</h1>
                 <p class="admin-subtitle">Daftar review dari customer. Admin bisa menghapus ulasan.</p>
 
                 <div class="table-wrap">

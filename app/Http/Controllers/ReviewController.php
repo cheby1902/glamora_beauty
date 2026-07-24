@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\Review;
-    use App\Models\Produk;
+use App\Models\Produk;
 use Illuminate\Http\Request;
+use App\Models\Keranjang;
+use App\Models\Pesanan;
 
 class ReviewController extends Controller
 {
@@ -12,10 +14,23 @@ public function index($id_produk)
 {
     $produk = Produk::findOrFail($id_produk);
 
-    return view(
-        'review',
-        compact('produk')
-    );
+    $jumlahKeranjang = Keranjang::where(
+        'id_user',
+        session('user_id')
+    )->sum('jumlah');
+
+    $jumlahNotifikasi = Pesanan::where(
+        'id_user',
+        session('user_id')
+    )
+    ->where('status_dibaca', 1)
+    ->count();
+
+    return view('review', [
+        'produk' => $produk,
+        'jumlahKeranjang' => $jumlahKeranjang,
+        'jumlahNotifikasi' => $jumlahNotifikasi,
+    ]);
 }
 
     public function store(Request $request)
